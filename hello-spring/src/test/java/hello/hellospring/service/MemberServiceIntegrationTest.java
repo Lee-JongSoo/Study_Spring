@@ -38,7 +38,7 @@ class MemberServiceIntegrationTest {
     @Test
     public void 중복_회원_예외(){
         //given
-        Member member1 = new Member(); 
+        Member member1 = new Member();
         member1.setName("spring");
 
         Member member2 = new Member();

@@ -1,5 +1,6 @@
 package helloSpring.core.order;
 
+import helloSpring.core.AppConfig;
 import helloSpring.core.member.Grade;
 import helloSpring.core.member.Member;
 import helloSpring.core.member.MemberService;
@@ -7,8 +8,9 @@ import helloSpring.core.member.MemberServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);

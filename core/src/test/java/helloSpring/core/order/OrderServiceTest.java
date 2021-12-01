@@ -1,10 +1,8 @@
 package helloSpring.core.order;
 
 import helloSpring.core.AppConfig;
-import helloSpring.core.member.Grade;
-import helloSpring.core.member.Member;
-import helloSpring.core.member.MemberService;
-import helloSpring.core.member.MemberServiceImpl;
+import helloSpring.core.discount.FixDiscountPolicy;
+import helloSpring.core.member.*;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

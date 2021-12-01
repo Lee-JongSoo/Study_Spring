@@ -2,6 +2,11 @@ package helloSpring.core.discount;
 
 import helloSpring.core.member.Grade;
 import helloSpring.core.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+
 
 public class FixDiscountPolicy implements DiscountPolicy{
 

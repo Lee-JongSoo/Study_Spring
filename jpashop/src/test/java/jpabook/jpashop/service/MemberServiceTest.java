@@ -49,9 +49,7 @@ public class MemberServiceTest {
         memberService.join(member1);
         memberService.join(member2); //예외가 발생하애 한다!!!!
 
-
         //then
         fail("예외가 발생해야 한다.");
     }
-
 }

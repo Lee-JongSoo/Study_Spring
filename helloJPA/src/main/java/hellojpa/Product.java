@@ -5,21 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member2 {
+public class Product {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "MEMBER_ID")
+    @Id @GeneratedValue
     private Long id;
 
-    @Column(name = "USERNAME")
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TEAM_ID")
-    private Team team;
-
-    @OneToMany(mappedBy = "member2")
+    @OneToMany(mappedBy = "product")
     private List<MemberProduct> memberProducts = new ArrayList<>();
 
     public Long getId() {
@@ -38,13 +31,11 @@ public class Member2 {
         this.name = name;
     }
 
-    public Team getTeam() {
-        return team;
+    public List<MemberProduct> getMemberProducts() {
+        return memberProducts;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
-
-        team.getMember2s().add(this);
+    public void setMemberProducts(List<MemberProduct> memberProducts) {
+        this.memberProducts = memberProducts;
     }
 }

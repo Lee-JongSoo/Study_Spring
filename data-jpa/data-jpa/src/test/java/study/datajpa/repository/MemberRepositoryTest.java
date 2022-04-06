@@ -49,8 +49,8 @@ public class MemberRepositoryTest {
         assertThat(findMember).isEqualTo(member);
      }
 
-     @Test
-     public void basicCRUD() throws Exception {
+    @Test
+    public void basicCRUD() throws Exception {
          //given
          Member member1 = new Member("member1");
          Member member2 = new Member("member2");
@@ -268,8 +268,8 @@ public class MemberRepositoryTest {
         }
      }
 
-     @Test
-     public void queryHint() throws Exception {
+    @Test
+    public void queryHint() throws Exception {
          //given
          memberRepository.save(new Member("member1", 10));
          em.flush();
@@ -283,15 +283,21 @@ public class MemberRepositoryTest {
          em.flush();
       }
 
-      @Test
-      public void lock() throws Exception {
+    @Test
+    public void lock() throws Exception {
          //given
-         memberRepository.save(new Member("member1", 10));
-         em.flush();
-         em.clear();
+        memberRepository.save(new Member("member1", 10));
+        em.flush();
+        em.clear();
 
          //when
-          List<Member> result = memberRepository.findLockByUsername("member1");
-
+        List<Member> result = memberRepository.findLockByUsername("member1");
       }
+
+    @Test
+    public void callCustom() {
+        List<Member> result = memberRepository.findMemberCustom();
+    }
+
+
 }
